@@ -1,31 +1,53 @@
 window.onload = () => {
   const ui = new UI();
+  const html = new Html();
+  console.log(html);
 
   document.querySelector("#dark-mode-btn").addEventListener("click", () => {
     ui.changeToDarkMode();
   });
 
-  document.querySelector("#filter-list").addEventListener("click", (e) => {
-    ui.displayFilteredItem(e);
-    ui.getCountriesByRegion(e)
+  html.htmlDom(document.querySelector("#filter-list"), {
+    eventName: "click",
+    eventHandler: (e) => {
+      ui.displayFilteredItem(e);
+      ui.getCountriesByRegion(e);
+    },
   });
 
-  document.querySelector("#filter-container").addEventListener("click", (e) => {
-    ui.displayOptions(e);
+  html.htmlDom(document.querySelector("#filter-container"), {
+    eventName: "click",
+    eventHandler: (e) => {
+      ui.displayOptions(e);
+    },
   });
 
-  ui.getCountries();
+  try {
+    ui.getCountries();
+  } catch (error) {}
 
-  document.querySelector('#filter-container').addEventListener('click', (e) => {
-    ui.cancelFilter(e);
+  html.htmlDom(document.querySelector("#filter-container"), {
+    eventName: "click",
+    eventHandler: (e) => {
+      ui.cancelFilter(e);
+    },
   });
 
-  document.querySelector("form").addEventListener('submit', e => {
+  html.htmlDom(document.querySelector("form"), {
+    eventName: "submit",
+    eventHandler: (e) => {
       e.preventDefault();
       ui.searchForACountry();
-      console.log(e)
-  })
+    },
+  });
 
-
+  html.htmlDom(document.querySelector("#countries-container"), {
+    eventName: "click",
+    eventHandler: (e) => {
+      console.log(document.querySelector(".countries"));
+      e.preventDefault();
+      ui.linkToCountryPage(e);
+    },
+  });
 
 };

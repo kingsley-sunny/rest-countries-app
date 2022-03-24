@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body class=" light-mode mode bg-gray-100 text-gray-700 dark:text-gray-200 dark:bg-gray-900">
+    
+    <!-- The nav bar -->
+    <nav class="nav py-6 px-4 shadow-md light-mode mode bg-white text-gray-700 dark:text-gray-300 dark:bg-gray-800">
+        <div class="box flex justify-between items-center">
+            <div id="nav" class="md:text-xl font-bold">Where in the world now?</div>
+            <button id="dark-mode-btn" class=" text-sm lg:text-base flex items-center gap-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                <p class="">dark mode</p>
+            </button>
+        </div>
+    </nav>
+
+    <!-- THe back button -->
+   <div class="px-4 mt-12">
+    <div class="box">
+        <button class="flex justify-between items-center px-5 py-2 gap-x-3 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <p class="text-semibold text-sm uppercase">back</p>
+        </button>
+       </div>
+   </div>
+
+
+   <!-- The countries details div -->
+   <div class="px-4 mt-20">
+       <div class="box  grid md:grid-cols-2 md:gap-8 lg:gap-16 xl:gap-x-32 gap-y-12 md:gap-y-0 ">
+           <div class="w-full h-full">
+               <img src="https://flagcdn.com/w320/se.png" class="w-full h-full object-container object-center" alt="">
+           </div>
+           <div class=" ">
+                <div class="">
+                    <h1 class="text-3xl font-bold">Biafia</h1>
+                    <div class="md:grid grid-cols-2 gap-x-4 items-start">
+                        <ul class="mt-8 space-y-4">
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                        </ul>
+
+                        <ul class="mt-8 space-y-4">
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                            <li class="font-[500] capitalize">Name:<span class="font-[400] ml-2">The mad country</span></li>
+                        </ul>
+                    </div>
+    
+                </div>
+
+                <div class="mt-10 md:flex gap-x-5  items-baseline">
+                    <h1 class="text-lg md:text-base  font-[500]">Border Countries</h1>
+                    <div class="flex items-center mt-4 space-x-3">
+                        <button class="py-1.5 px-4 bg-white dark:bg-gray-700 rounded-lg shadow-xl border-2 dark:border-0">France</button>
+                        <button class="py-1.5 px-4 bg-white dark:bg-gray-700 rounded-lg shadow-xl border-2 dark:border-0">France</button>
+                        <button class="py-1.5 px-4 bg-white dark:bg-gray-700 rounded-lg shadow-xl border-2 dark:border-0">France</button>
+                    </div>
+                </div>
+           </div>
+       </div>
+   </div>
+    <!-- The javaScript links -->
+    <script src="./func.js"></script>
+    <script src="./easyHttp3.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
