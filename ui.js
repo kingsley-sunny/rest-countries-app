@@ -32,16 +32,13 @@ class UI {
       return;
     }
     const value = localStorage.getItem(key);
-    console.log(value, 'none');
     const reveal = atob(value);
-    console.log(reveal);
     return reveal;
   }
 
   displayOptions(e) {
     const filterList = document.querySelector("#filter-list");
     if (!e.target.classList.contains("result")) {
-      console.log(e.target.id);
       filterList.classList.toggle("hidden");
     }
   }
@@ -65,10 +62,8 @@ class UI {
 
     result = document.querySelector("#result");
     result.children[0].children[0].textContent = e.target.textContent;
-    console.log(e.target.textContent);
     filterList.classList.add("hidden");
 
-    console.log();
   }
 
   displayLoading(selector) {
@@ -90,7 +85,6 @@ class UI {
         </div>
         `;
     selector.innerHTML = loading;
-    console.log(err);
   }
 
   getCountries() {
@@ -107,7 +101,6 @@ class UI {
           i++;
         }
       }
-      console.log(countries);
       this.renderCountryToUI(
         countries,
         document.querySelector("#countries-container"),
@@ -125,7 +118,6 @@ class UI {
       http
         .get(`https://restcountries.com/v3.1/subregion/${text.toLowerCase()}`)
         .then((res, err) => {
-          console.log(res);
           if (res.status !== 404) {
             this.renderCountryToUI(
               res,
@@ -146,7 +138,6 @@ class UI {
     this.displayLoading(document.querySelector("#country-details"));
     
     const value = this.get("restCountries");
-    console.log(value);
     http
       .get(`https://restcountries.com/v3.1/name/${value}?fullText=true`)
       .then((res, err) => {
@@ -155,7 +146,6 @@ class UI {
           } else {
               this.displayError(err, this.displayError(res, document.querySelector('#country-details')))
           }
-          console.log(res)
       }).catch(err => {
           this.displayError(err, document.querySelector('#country-details'))
       })
@@ -175,7 +165,6 @@ class UI {
     http
       .get(`https://restcountries.com/v3.1/name/${search.value}`)
       .then((res, err) => {
-        console.log(res);
         this.displayLoading(document.querySelector("#countries-container"));
         this.renderCountryToUI(
           res,
@@ -188,7 +177,6 @@ class UI {
   renderCountryToUI(items, selector, common) {
     selector.innerHTML = "";
     if (items.length < 1) {
-      console.log(items);
       return;
     }
     items.forEach((item) => {
@@ -281,10 +269,7 @@ class UI {
   }
 
   cancelFilter(e) {
-    console.log(e.target.id);
     if (e.target.id === "cancel-filter-btn") {
-      console.log(e.target);
-      console.log(e.target.parentElement);
       e.target.parentElement.parentElement.remove();
     }
   }

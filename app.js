@@ -47,7 +47,6 @@ window.onload = () => {
   html.htmlDom(document.querySelector("#countries-container"), {
     eventName: "click",
     eventHandler: (e) => {
-      console.log();
       e.preventDefault();
       ui.linkToCountryPage(e);
     },
