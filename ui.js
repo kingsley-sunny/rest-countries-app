@@ -186,7 +186,7 @@ class UI {
             }" class="max-w-xs shadow-md cursor-pointer rounded-sm overflow-hidden grid grid-rows-2 light-mode mode bg-white text-gray-700 dark:text-white dark:bg-gray-800">
                 <div country-name = "${
                   item.name[common] || item.name
-                }" class="border-b-2 cursor-pointer">
+                }" class="border-b-2 dark:border-b-0 cursor-pointer">
                     <img src=${item.flags.png} country-name = "${
         item.name[common] || item.name
       }" class=" w-full h-[185px] object-container cursor-pointer object-center">
