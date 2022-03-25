@@ -1,7 +1,6 @@
 window.onload = () => {
   const ui = new UI();
   const html = new Html();
-  console.log(html);
 
   document.querySelector("#dark-mode-btn").addEventListener("click", () => {
     ui.changeToDarkMode();
@@ -26,6 +25,10 @@ window.onload = () => {
     ui.getCountries();
   } catch (error) {}
 
+  if (document.querySelector("#country-details")) {
+    ui.getCountryDetails();
+  }
+
   html.htmlDom(document.querySelector("#filter-container"), {
     eventName: "click",
     eventHandler: (e) => {
@@ -44,7 +47,7 @@ window.onload = () => {
   html.htmlDom(document.querySelector("#countries-container"), {
     eventName: "click",
     eventHandler: (e) => {
-      console.log(document.querySelector(".countries"));
+      console.log();
       e.preventDefault();
       ui.linkToCountryPage(e);
     },
